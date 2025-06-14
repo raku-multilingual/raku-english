@@ -1,0 +1,19 @@
+{
+  "perl": "6.*",
+  "name": "English",
+  "version": "0.0.3",
+  "description": "English language programming for Raku - UK and US spelling variants",
+  "authors": ["Danslav Slavenskoj"],
+  "auth": "zef:slavenskoj",
+  "depends": [],
+  "build-depends": [],
+  "test-depends": ["Test"],
+  "provides": {
+    "English": "lib/English.rakumod"
+  },
+  "resources": [],
+  "license": "Artistic-2.0",
+  "tags": ["English", "Language", "UK", "US", "British", "American"],
+  "source-url": "https://github.com/raku-multilingual/raku-english",
+  "api": "1"
+}

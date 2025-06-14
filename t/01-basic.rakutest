@@ -1,0 +1,41 @@
+use v6.d;
+use Test;
+use lib 'lib';
+use English;
+
+plan 25;
+
+# String functions - UK/US spelling variants
+is capitalise('hello'), 'Hello', 'UK capitalise works';
+is capitalize('hello'), 'Hello', 'US capitalize works';
+is lower_case('WORLD'), 'world', 'UK lower_case works';
+is lowercase('WORLD'), 'world', 'US lowercase works';
+is upper_case('raku'), 'RAKU', 'UK upper_case works';
+is uppercase('raku'), 'RAKU', 'US uppercase works';
+
+# Math/Maths functions
+is maths_add(5, 3), 8, 'UK maths_add works';
+is math_add(5, 3), 8, 'US math_add works';
+is maths_subtract(10, 4), 6, 'UK maths_subtract works';
+is math_subtract(10, 4), 6, 'US math_subtract works';
+is maths_multiply(2, 3), 6, 'UK maths_multiply works';
+is math_multiply(2, 3), 6, 'US math_multiply works';
+is maths_divide(10, 2), 5, 'UK maths_divide works';
+is math_divide(10, 2), 5, 'US math_divide works';
+is maths_round(3.7), 4, 'UK maths_round works';
+is math_round(3.7), 4, 'US math_round works';
+is maths_floor(3.7), 3, 'UK maths_floor works';
+is math_floor(3.7), 3, 'US math_floor works';
+is maths_ceiling(3.2), 4, 'UK maths_ceiling works';
+is math_ceiling(3.2), 4, 'US math_ceiling works';
+
+# Boolean values
+ok yes, 'yes is True';
+ok aye, 'aye is True';
+nok no, 'no is False';
+nok nay, 'nay is False';
+
+# Other functions
+is centre('test', 8, '-'), '--test--', 'UK centre works';
+
+done-testing;

@@ -1,0 +1,37 @@
+use v6.d;
+use Test;
+use lib 'lib';
+use English;
+
+plan 14;
+
+# Centre/Center functions
+is centre('test', 8, '-'), '--test--', 'UK centre works';
+is center('test', 8, '-'), '--test--', 'US center works';
+
+# Normalise/Normalize functions
+is normalise("Hello World"), "hello-world", 'UK normalise works';
+is normalize("Hello World"), "hello-world", 'US normalize works';
+
+# Emphasise/Emphasize functions
+is emphasise("important"), "*important*", 'UK emphasise works';
+is emphasize("important"), "*important*", 'US emphasize works';
+
+# Serialise/Serialize functions
+my $data = { a => 1, b => 2 };
+like serialise($data), /'a'/, 'UK serialise contains key a';
+like serialize($data), /'b'/, 'US serialize contains key b';
+
+# Analyse/Analyze functions
+my $text = "Hello world.\nThis is a test.";
+my $result = analyse_text($text);
+is $result<chars>, 28, 'UK analyse_text counts characters correctly';
+is $result<words>, 6, 'UK analyse_text counts words correctly';
+is $result<lines>, 2, 'UK analyse_text counts lines correctly';
+
+$result = analyze_text($text);
+is $result<chars>, 28, 'US analyze_text counts characters correctly';
+is $result<words>, 6, 'US analyze_text counts words correctly';
+is $result<lines>, 2, 'US analyze_text counts lines correctly';
+
+done-testing;

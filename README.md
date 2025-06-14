@@ -181,7 +181,7 @@ The tests verify all functionality including:
 
 ## Contributing
 
-https://github.com/raku-multilingual
+https://github.com/raku-multilingual/raku-english
 
 ## License
 
